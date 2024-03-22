@@ -1,0 +1,746 @@
+{
+	"info": {
+		"_postman_id": "9f20fded-e360-4527-baae-08c88c69de5a",
+		"name": "Sample Mainframe REST Calls",
+		"description": "PostMan Collection with a Selection of API Calls for Mainframe Customers\n\nNote: More functionality exists in the PowerMax API than shown here.\n\nPlease Check the documentation at [https://developer.dell.com](https://developer.dell.com) for the full functionality and options.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1175162",
+		"_collection_link": "https://red-shadow-568797.postman.co/workspace/PowerMax-Mainframe-REST-calls~e46847f6-8cf1-4cf1-a163-e2101bc1ea4d/collection/1175162-9f20fded-e360-4527-baae-08c88c69de5a?action=share&source=collection_link&creator=1175162"
+	},
+	"item": [
+		{
+			"name": "System Health",
+			"item": [
+				{
+					"name": "1.List Mainframe Systems",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{UnisphereHostIP}}:8443/univmax/restapi/101/mainframe/symmetrix",
+							"protocol": "https",
+							"host": [
+								"{{UnisphereHostIP}}"
+							],
+							"port": "8443",
+							"path": [
+								"univmax",
+								"restapi",
+								"101",
+								"mainframe",
+								"symmetrix"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.Run System Healthcheck",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"Mainframe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{UnisphereHostIP}}:8443/univmax/restapi/101/system/symmetrix/{{id}}/health/health_check/",
+							"protocol": "https",
+							"host": [
+								"{{UnisphereHostIP}}"
+							],
+							"port": "8443",
+							"path": [
+								"univmax",
+								"restapi",
+								"101",
+								"system",
+								"symmetrix",
+								"{{id}}",
+								"health",
+								"health_check",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Get Health Check Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{UnisphereHostIP}}:8443/univmax/restapi/101/system/symmetrix/{{id}}/health/health_check/",
+							"protocol": "https",
+							"host": [
+								"{{UnisphereHostIP}}"
+							],
+							"port": "8443",
+							"path": [
+								"univmax",
+								"restapi",
+								"101",
+								"system",
+								"symmetrix",
+								"{{id}}",
+								"health",
+								"health_check",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4.Get Healthcheck Results",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{UnisphereHostIP}}:8443/univmax/restapi/101/system/symmetrix/{{id}}/health/health_check/1711020845746",
+							"protocol": "https",
+							"host": [
+								"{{UnisphereHostIP}}"
+							],
+							"port": "8443",
+							"path": [
+								"univmax",
+								"restapi",
+								"101",
+								"system",
+								"symmetrix",
+								"{{id}}",
+								"health",
+								"health_check",
+								"1711020845746"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gathering Performance Data",
+			"item": [
+				{
+					"name": "1.List Performance Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{UnisphereHostIP}}:8443/univmax/rest/v1/systems/{{id}}/performance-categories",
+							"protocol": "https",
+							"host": [
+								"{{UnisphereHostIP}}"
+							],
+							"port": "8443",
+							"path": [
+								"univmax",
+								"rest",
+								"v1",
+								"systems",
+								"{{id}}",
+								"performance-categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.Get Latest FrontEnd Port Perf Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{UnisphereHostIP}}:8443/univmax/rest/v1/systems/{{id}}/performance-categories/FEPort",
+							"protocol": "https",
+							"host": [
+								"{{UnisphereHostIP}}"
+							],
+							"port": "8443",
+							"path": [
+								"univmax",
+								"rest",
+								"v1",
+								"systems",
+								"{{id}}",
+								"performance-categories",
+								"FEPort"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.Get Latest FiconEmulationThread Perf Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{UnisphereHostIP}}:8443/univmax/rest/v1/systems/{{id}}/performance-categories/FiconEmulationThread",
+							"protocol": "https",
+							"host": [
+								"{{UnisphereHostIP}}"
+							],
+							"port": "8443",
+							"path": [
+								"univmax",
+								"rest",
+								"v1",
+								"systems",
+								"{{id}}",
+								"performance-categories",
+								"FiconEmulationThread"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4.Get Latest FiconPortThread Perf Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{UnisphereHostIP}}:8443/univmax/rest/v1/systems/{{id}}/performance-categories/FiconPortThread",
+							"protocol": "https",
+							"host": [
+								"{{UnisphereHostIP}}"
+							],
+							"port": "8443",
+							"path": [
+								"univmax",
+								"rest",
+								"v1",
+								"systems",
+								"{{id}}",
+								"performance-categories",
+								"FiconPortThread"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5.Get Latest RDFS Perf Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{UnisphereHostIP}}:8444/univmax/rest/v1/systems/{{id}}/performance-categories/SRDFS",
+							"protocol": "https",
+							"host": [
+								"{{UnisphereHostIP}}"
+							],
+							"port": "8444",
+							"path": [
+								"univmax",
+								"rest",
+								"v1",
+								"systems",
+								"{{id}}",
+								"performance-categories",
+								"SRDFS"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6.Get Latest RDFA Perf Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{UnisphereHostIP}}:8444/univmax/rest/v1/systems/{{id}}/performance-categories/SRDFA",
+							"protocol": "https",
+							"host": [
+								"{{UnisphereHostIP}}"
+							],
+							"port": "8444",
+							"path": [
+								"univmax",
+								"rest",
+								"v1",
+								"systems",
+								"{{id}}",
+								"performance-categories",
+								"SRDFA"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Provisioning Storage and Gathering Configuration Information",
+			"item": [
+				{
+					"name": "2.Splits",
+					"item": [
+						{
+							"name": "2.1List System Splits",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{UnisphereHostIP}}:8443/univmax/restapi/101/mainframe/symmetrix/{{id}}/split",
+									"protocol": "https",
+									"host": [
+										"{{UnisphereHostIP}}"
+									],
+									"port": "8443",
+									"path": [
+										"univmax",
+										"restapi",
+										"101",
+										"mainframe",
+										"symmetrix",
+										"{{id}}",
+										"split"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.2.Get Split Details",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{UnisphereHostIP}}:8443/univmax/restapi/101/mainframe/symmetrix/{{id}}/split/SPLIT0",
+									"protocol": "https",
+									"host": [
+										"{{UnisphereHostIP}}"
+									],
+									"port": "8443",
+									"path": [
+										"univmax",
+										"restapi",
+										"101",
+										"mainframe",
+										"symmetrix",
+										"{{id}}",
+										"split",
+										"SPLIT0"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.3.Create a New Split on PowerMax Array",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"executionOption\": \"SYNCHRONOUS\",\r\n    \"split_name\": \"MyNewSplit\",\r\n    \"pav_type\": \"Hyper\",\r\n    \"ports_to_associate\": [\r\n        \"EF-1D:2\",\r\n        \"EF-2D:2\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{UnisphereHostIP}}:8443/univmax/restapi/101/mainframe/symmetrix/{{id}}/split",
+									"protocol": "https",
+									"host": [
+										"{{UnisphereHostIP}}"
+									],
+									"port": "8443",
+									"path": [
+										"univmax",
+										"restapi",
+										"101",
+										"mainframe",
+										"symmetrix",
+										"{{id}}",
+										"split"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.4.Modify an Existing Split",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"Rename\",\r\n  \"rename_param\": {\r\n    \"new_split_name\": \"RenamedSplit\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{UnisphereHostIP}}:8443/univmax/restapi/101/mainframe/symmetrix/{{id}}/split/SPLIT0",
+									"protocol": "https",
+									"host": [
+										"{{UnisphereHostIP}}"
+									],
+									"port": "8443",
+									"path": [
+										"univmax",
+										"restapi",
+										"101",
+										"mainframe",
+										"symmetrix",
+										"{{id}}",
+										"split",
+										"SPLIT0"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.5.Delete an Existing Split",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"action\": \"Rename\",\r\n  \"rename_param\": {\r\n    \"new_split_name\": \"RenamedSplit\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{UnisphereHostIP}}:8443/univmax/restapi/101/mainframe/symmetrix/{{id}}/split/SPLIT_ID_TO_BE_DELETED",
+									"protocol": "https",
+									"host": [
+										"{{UnisphereHostIP}}"
+									],
+									"port": "8443",
+									"path": [
+										"univmax",
+										"restapi",
+										"101",
+										"mainframe",
+										"symmetrix",
+										"{{id}}",
+										"split",
+										"SPLIT_ID_TO_BE_DELETED"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "3.CU_Images",
+					"item": [
+						{
+							"name": "3.1.Get CU Images On Split",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{UnisphereHostIP}}:8443/univmax/restapi/101/mainframe/symmetrix/{{id}}/split/SPLIT0/cu_image",
+									"protocol": "https",
+									"host": [
+										"{{UnisphereHostIP}}"
+									],
+									"port": "8443",
+									"path": [
+										"univmax",
+										"restapi",
+										"101",
+										"mainframe",
+										"symmetrix",
+										"{{id}}",
+										"split",
+										"SPLIT0",
+										"cu_image"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.2.Get CU Image Details",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{UnisphereHostIP}}:8443/univmax/restapi/101/mainframe/symmetrix/{{id}}/split/SPLIT0/cu_image/0x0002",
+									"protocol": "https",
+									"host": [
+										"{{UnisphereHostIP}}"
+									],
+									"port": "8443",
+									"path": [
+										"univmax",
+										"restapi",
+										"101",
+										"mainframe",
+										"symmetrix",
+										"{{id}}",
+										"split",
+										"SPLIT0",
+										"cu_image",
+										"0x0002"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.3.Create CU Image on Split",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"cu_image_id\": \"0x58\",\r\n  \"ssid\": \"0x5858\",\r\n  \"num_base_addresses\": 150,\r\n  \"num_alias_addresses\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{UnisphereHostIP}}:8443/univmax/restapi/101/mainframe/symmetrix/{{id}}/split/SPLIT0/cu_image",
+									"protocol": "https",
+									"host": [
+										"{{UnisphereHostIP}}"
+									],
+									"port": "8443",
+									"path": [
+										"univmax",
+										"restapi",
+										"101",
+										"mainframe",
+										"symmetrix",
+										"{{id}}",
+										"split",
+										"SPLIT0",
+										"cu_image"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.4.Modify CU Image on Split",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"cu_image_id\": \"0x58\",\r\n  \"ssid\": \"0x5858\",\r\n  \"num_base_addresses\": 150,\r\n  \"num_alias_addresses\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{UnisphereHostIP}}:8443/univmax/restapi/101/mainframe/symmetrix/{{id}}/split/SPLIT0/cu_image",
+									"protocol": "https",
+									"host": [
+										"{{UnisphereHostIP}}"
+									],
+									"port": "8443",
+									"path": [
+										"univmax",
+										"restapi",
+										"101",
+										"mainframe",
+										"symmetrix",
+										"{{id}}",
+										"split",
+										"SPLIT0",
+										"cu_image"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.5.Delete CU Image on Split",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://{{UnisphereHostIP}}:8443/univmax/restapi/101/mainframe/symmetrix/{{id}}/split/SPLIT0/cu_image/0x0002",
+									"protocol": "https",
+									"host": [
+										"{{UnisphereHostIP}}"
+									],
+									"port": "8443",
+									"path": [
+										"univmax",
+										"restapi",
+										"101",
+										"mainframe",
+										"symmetrix",
+										"{{id}}",
+										"split",
+										"SPLIT0",
+										"cu_image",
+										"0x0002"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "4.Provisioning Mainframe Volumes",
+					"item": [
+						{
+							"name": "4.1.Create New Mainframe Volumes",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"cu_image\": {\r\n    \"start_base_address\": \"50\",\r\n    \"create_cu_image\": {\r\n      \"cu_image_id\": \"A2\",\r\n      \"ssid\": \"A2A2\",\r\n      \"num_base_addresses\": 100,\r\n      \"num_alias_addresses\": 100\r\n    }\r\n  },\r\n  \"create_storage_group\": {\r\n    \"srpId\": \"SRP_1\",\r\n    \"storageGroupId\": \"CDJ1000_sc_rest_test_02\",\r\n    \"emulation\": \"CKD-3390\",\r\n    \"sloBasedStorageGroupParam\": [\r\n      {\r\n        \"noCompression\": \"true\",\r\n        \"sloId\": \"None\",\r\n        \"workloadSelection\": \"NONE\",\r\n        \"volumeAttributes\": [\r\n          {\r\n            \"num_of_vols\": \"3\",\r\n            \"volume_size\": \"100\",\r\n            \"capacityUnit\": \"CYL\"\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{UnisphereHostIP}}:8443/univmax/restapi/101/mainframe/symmetrix/{{id}}/split/{{SPLIT_ID}}/storageProvisioningToHost",
+									"protocol": "https",
+									"host": [
+										"{{UnisphereHostIP}}"
+									],
+									"port": "8443",
+									"path": [
+										"univmax",
+										"restapi",
+										"101",
+										"mainframe",
+										"symmetrix",
+										"{{id}}",
+										"split",
+										"{{SPLIT_ID}}",
+										"storageProvisioningToHost"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "4.1.Create New Mainframe Volumes",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"cu_image\": {\r\n    \"start_base_address\": \"50\",\r\n    \"create_cu_image\": {\r\n      \"cu_image_id\": \"A2\",\r\n      \"ssid\": \"A2A2\",\r\n      \"num_base_addresses\": 100,\r\n      \"num_alias_addresses\": 100\r\n    }\r\n  },\r\n  \"create_storage_group\": {\r\n    \"srpId\": \"SRP_1\",\r\n    \"storageGroupId\": \"CDJ1000_sc_rest_test_02\",\r\n    \"emulation\": \"CKD-3390\",\r\n    \"sloBasedStorageGroupParam\": [\r\n      {\r\n        \"noCompression\": \"true\",\r\n        \"sloId\": \"Diamond\",\r\n        \"workloadSelection\": \"NONE\",\r\n        \"volumeAttributes\": [\r\n          {\r\n            \"num_of_vols\": \"3\",\r\n            \"volume_size\": \"100\",\r\n            \"capacityUnit\": \"GB\"\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{UnisphereHostIP}}:8443/univmax/restapi/101/mainframe/symmetrix/{{id}}/split/{{SPLIT_ID}}/storageProvisioningToHost",
+											"protocol": "https",
+											"host": [
+												"{{UnisphereHostIP}}"
+											],
+											"port": "8443",
+											"path": [
+												"univmax",
+												"restapi",
+												"101",
+												"mainframe",
+												"symmetrix",
+												"{{id}}",
+												"split",
+												"{{SPLIT_ID}}",
+												"storageProvisioningToHost"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": "{\r\n  \"storageGroupId\": \"CDJ1000_sc_rest_test_02\",\r\n  \"slo\": \"Diamond\",\r\n  \"service_level\": \"Diamond\",\r\n  \"base_slo_name\": \"Diamond\",\r\n  \"srp\": \"SRP_1\",\r\n  \"slo_compliance\": \"NONE\",\r\n  \"num_of_vols\": 3,\r\n  \"num_of_child_sgs\": 0,\r\n  \"num_of_parent_sgs\": 0,\r\n  \"num_of_masking_views\": 0,\r\n  \"num_of_snapshots\": 0,\r\n  \"cap_gb\": 300,\r\n  \"device_emulation\": \"FBA\",\r\n  \"type\": \"Standalone\",\r\n  \"unprotected\": true,\r\n  \"hostIOLimit\": {\r\n    \"host_io_limit_mb_sec\": \"100\",\r\n    \"host_io_limit_io_sec\": \"NOLIMIT\",\r\n    \"dynamicDistribution\": \"Never\"\r\n  },\r\n  \"compression\": true,\r\n  \"vp_saved_percent\": 100\r\n}"
+								}
+							]
+						}
+					]
+				}
+			],
+			"description": "Collection of REST calls for Performance API"
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "smc",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "smc",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "UnisphereHostIP",
+			"value": "10.246.89.21"
+		},
+		{
+			"key": "port",
+			"value": "8443"
+		},
+		{
+			"key": "id",
+			"value": "000120200949"
+		},
+		{
+			"key": "SPLIT_ID",
+			"value": "0x0002"
+		}
+	]
+}
